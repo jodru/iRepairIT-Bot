@@ -88,10 +88,10 @@ class RegComs(commands.Cog):
         where = location[-1]
         
         #TODO: Add strings for all options
-        buc = os.getenv("BUC")
-        mid = os.getenv("MID")
-        smy = os.getenv("SMY")
-        aloc = os.getenv("ALOC")
+        buc = "Thank you for calling iRepairIT, per your request, here is our address:\n\n324 Pharr Road NE, Atlanta, GA 30305\n\nWe are located across the street from the Chevron gas station, in the all white shopping center.\n\nQuestions? Call us at 678-650-2822\n\nThis message is AUTOMATED. Replies are not received."
+        mid = "Thank you for calling iRepairIT, per your request, here is our address:\n\n1715 Howell Mill Rd NW, Suite C8-A, Atlanta, GA 30318\n\nWe are located in the Kroger shopping center, 4 doors to the right of Kroger.\n\nQuestions? Call us at 404-889-7993\n\nThis message is AUTOMATED. Replies are not received."
+        smy = "Thank you for calling iRepairIT, per your request, here is our address:\n\n2517 Spring Road SE, Suite 102, Smyrna, GA 30080\n\nWe are located across the street from RaceTrac in the same plaza as Taco Cantina. \n\nQuestions? Call us at 678-575-1808\n\nThis message is AUTOMATED. Replies are not received."
+        aloc = "Thank you for calling iRepairIT, per your request, here are all our addresses:\n\nSmyrna\n2517 Spring Road SE, Suite 102, Smyrna, GA 30080\n\nBuckhead\n324 Pharr Road NE, Atlanta, GA 30305\n\nMidtown\n1715 Howell Mill Road NW, Suite C8-A, Atlanta, GA 30318\n\nThis message is AUTOMATED. Replies are not received."
         
         #Append the US country code to the number, and declare an empty text message for the following try block.       
         actualNum = ''.join(('+1', num))
