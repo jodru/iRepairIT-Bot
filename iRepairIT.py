@@ -28,9 +28,7 @@ logChannel = {}
  
  
 # Uses .env file to access account information
-# test_account_sid = os.getenv("TEST_TWILIO_ACCOUNT_SID")
 account_sid = os.getenv("TWILIO_ACCOUNT_SID")
-# test auth_token  = os.getenv("TEST_TWILIO_AUTH_TOKEN")
 auth_token  = os.getenv("TWILIO_AUTH_TOKEN")
 phone = os.getenv("TWILIO_PHONE")
 
@@ -41,44 +39,7 @@ class RegComs(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self._last_member = None
-
-    @commands.command()
-    async def hellothere(self, ctx):
-        """I hate commands like this but here you go."""
-        #No seriously I really hate commands like this. Still my first command though so.
-        await ctx.send("General Kenobi!")
-        
-    @commands.command()
-    async def remind(self, ctx, time : str, *, message=''):
-    
-        """Adds a reminder to be sent after the specified time in secs, mins, hours, or days. Example: !remind 3h Message"""
-        
-        #Random command left over as an example from my own personal Discord bot.
-        #It's shitty, I know, I also don't care enough to make it better.
-        last = time[-1]
-        thyme = time[:-1]
-        thymeParse = int(thyme)
-        segundo = 0
-        try:
-        
-            if last == "s":
-                segundo = thymeParse
-            elif last == "m":
-                segundo = thymeParse * 60
-            elif last == "h":
-                segundo = thymeParse * 60 * 60
-            elif last == "d":
-                segundo = thymeParse * 60 * 60 * 24
-            else:
-                raise ValueError('Wrong')
-    
-        except Exception:
-            await ctx.send('Incorrect format. Try again idiot.')
-            return
-        await ctx.send("Reminder set in " + str(time) + ". The message is " + message)
-        await asyncio.sleep(segundo)
-        await ctx.send(f'Hi {ctx.message.author.mention}, you asked me to remind you about ' + message)
-    
+  
     @commands.command()
     async def address(self, ctx, location : str, *, num=''):
     
@@ -107,7 +68,7 @@ class RegComs(commands.Cog):
             elif where == "A":
                 textMessage = aloc
             else:
-                raise ValueError('Someone was a dummy.')
+                raise ValueError('Wrong letter.')
     
         except Exception:
             await ctx.send('Make sure to use B, M, S, or A before typing the number.')
